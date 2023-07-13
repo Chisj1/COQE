@@ -124,9 +124,9 @@ def parameters_to_model_name(param_dict):
     model_name = model_name.replace("test", "run")
 
     if not os.path.exists(os.path.join(result_file, model_name)):
-        os.mkdir(os.path.join(result_file, model_name))
+        os.makedirs(os.path.join(result_file, model_name))
     if not os.path.exists(os.path.join(model_file, model_name)):
-        os.mkdir(os.path.join(model_file, model_name))
+        os.makedirs(os.path.join(model_file, model_name))
 
     model_name += "/"
     if model_param is not None:
@@ -145,9 +145,9 @@ def parameters_to_model_name(param_dict):
     result_file, model_file = os.path.join(result_file, model_name), os.path.join(model_file, model_name)
 
     if not os.path.exists(result_file):
-        os.mkdir(result_file)
+        os.makedirs(result_file)
     if not os.path.exists(model_file):
-        os.mkdir(model_file)
+        os.makedirs(model_file)
     #
     # if optimizer_param is not None:
     #     model_name += "_"

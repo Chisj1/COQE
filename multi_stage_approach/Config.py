@@ -50,7 +50,7 @@ class PathConfig(object):
         # nlp tool file path
         if device == "cpu":
             self.stanford_path = r"D:/stanford-corenlp-full-2018-10-05"
-            self.bert_model_path = r"D:/base_uncased/" if file_type == "Camera-COQE" else r"D:/base_chinese/"
+            self.bert_model_path = r"D:/base_uncased" if file_type == "Camera-COQE" else r"D:/base_chinese/"
         else:
             self.stanford_path = premodel_path + "stanford-corenlp-full-2018-02-27"
             self.bert_model_path = premodel_path + "base_uncased/" if file_type == "Camera-COQE" else premodel_path + "base_chinese/"
@@ -58,9 +58,9 @@ class PathConfig(object):
             self.Word2Vec_path = premodel_path + "vector/word2vec.txt"
 
         self.pre_process_data = {
-            "train": "../data/pre_process/{}_train_data.txt".format(file_type),
-            "dev": "../data/pre_process/{}_dev_data.txt".format(file_type),
-            "test": "../data/pre_process/{}_test_data.txt".format(file_type)
+            "train": "../data/{}/train.txt".format(file_type),
+            "dev": "../data/{}/dev.txt".format(file_type),
+            "test": "../data/{}/test.txt".format(file_type)
         }
 
 
